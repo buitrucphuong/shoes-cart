@@ -1,0 +1,38 @@
+@import './common/colors';
+
+.app {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &::before {
+        content: "";
+        position: fixed;
+        display: block;
+        width: 300%;
+        height: 100%;
+        border-radius: 100%;
+        background-color: $yellow-color;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) skewY(-8deg);
+        animation: wave 8s ease-in-out infinite alternate;
+        z-index: -1;
+    }
+}
+
+@keyframes wave {
+    to {
+        top: 60%;
+    }
+}
+
+@media screen and (max-width: 740px) {
+
+    .app {
+        height: 100%;
+    }
+}
