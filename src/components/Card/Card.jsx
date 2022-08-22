@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import classNames from 'classnames/bind'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
@@ -37,6 +38,12 @@ const Card = ({ children, title, isTotal }) => {
             </div>
         </>
     )
+}
+
+Card.propTypes = {
+    children: PropTypes.node.isRequired,
+    title: PropTypes.string.isRequired,
+    isTotal: PropTypes.bool,
 }
 
 export default Card
